@@ -1,0 +1,58 @@
+{
+  "_notes": "Physically self-consistent fixture built to reproduce the demo target in Orbital_Guardian_Build_Plan.md §6: M1 clean approval, M2 rejected for an altitude-band breach, M3 rejected for both a fuel-budget breach and a secondary conjunction with SAT-107. Orbit is a circular 550km-altitude LEO (a = 6928.137 km), primary placed on the +x axis for simplicity, mean_motion computed exactly from n = sqrt(mu/a^3). SAT-107's position was derived (see README, 'How the fixture was built') so that only M3's Clohessy-Wiltshire-projected trajectory passes within the secondary-conjunction screening threshold over the 2-hour screening window used by check_secondary_conjunctions. IMPORTANT: run this fixture with MissionConstraintConfig.demo_scale() — the candidate dv_ms values here inherit the build plan's own illustrative ~1 m/s scale, which is ~50-100x larger than a realistic operational CAM burn (Research Reference §4.1), so the default ground-region tolerance (sized for realistic mm/s-cm/s burns) would flag M1/M2 as an artifact of that scale mismatch, not a real ground-track risk. See config.py for the full explanation.",
+
+  "primary_state": {
+    "object_id": "SAT-042",
+    "r_km": [6928.137, 0.0, 0.0],
+    "v_kms": [0.0, 7.585088535158763, 0.0],
+    "mean_motion_rad_s": 0.001094823692885802
+  },
+  "request": {
+    "primary_id": "SAT-042",
+    "candidates": [
+      {
+        "maneuver_id": "M1",
+        "burn_time_utc": "2026-09-12T13:46:00Z",
+        "direction": "along_track",
+        "dv_ms": 0.72,
+        "predicted_miss_km": 16.8,
+        "predicted_pc": 4.1e-7,
+        "fuel_cost_pct": 0.3
+      },
+      {
+        "maneuver_id": "M2",
+        "burn_time_utc": "2026-09-12T13:46:00Z",
+        "direction": "along_track",
+        "dv_ms": 0.91,
+        "predicted_miss_km": 23.2,
+        "predicted_pc": 1.2e-7,
+        "fuel_cost_pct": 0.4
+      },
+      {
+        "maneuver_id": "M3",
+        "burn_time_utc": "2026-09-12T13:46:00Z",
+        "direction": "radial",
+        "dv_ms": 1.20,
+        "predicted_miss_km": 41.7,
+        "predicted_pc": 5.0e-8,
+        "fuel_cost_pct": 0.6
+      }
+    ],
+    "constraints": {
+      "altitude_band_km": [548, 552],
+      "protected_ground_regions": ["India"],
+      "max_fuel_budget_pct_remaining": 0.5,
+      "other_active_satellites_km": [
+        { "object_id": "SAT-107", "r_km": [6924.437, -5.05, 0.0] }
+      ]
+    }
+  },
+  "expected_response": {
+    "primary_id": "SAT-042",
+    "evaluated": [
+      { "maneuver_id": "M1", "approved": true, "fuel_cost_pct": 0.3, "violations": [] },
+      { "maneuver_id": "M2", "approved": false, "fuel_cost_pct": 0.4, "violations": ["altitude_band_exceeded"] },
+      { "maneuver_id": "M3", "approved": false, "fuel_cost_pct": 0.6, "violations": ["fuel_budget_exceeded", "creates_secondary_conjunction:SAT-107"] }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+sgp4>=2.20
+skyfield>=1.45
+numpy>=1.24
+pydantic>=2.0
+fastapi>=0.100
+uvicorn>=0.20

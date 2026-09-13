@@ -1,0 +1,3 @@
+# Optional only: default explanations need neither package nor an API key.
+google-genai>=1,<3
+openai>=1,<3

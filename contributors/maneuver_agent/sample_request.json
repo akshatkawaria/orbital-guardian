@@ -1,0 +1,28 @@
+{
+  "event_id": "CONJ-001",
+  "satellite_id": "SAT-A",
+  "debris_id": "DEBRIS-07",
+  "reference_time": "2026-09-12T12:00:00Z",
+  "time_to_closest_approach_s": 2400,
+  "burn_lead_time_s": 1800,
+  "satellite_state": {
+    "position_km": [7000.0, 0.0, 0.0],
+    "velocity_km_s": [0.0, 7.546, 0.0]
+  },
+  "debris_state": {
+    "position_km": [6999.0, 18.0, 0.2],
+    "velocity_km_s": [0.01, 7.50, -0.001]
+  },
+  "baseline_miss_distance_km": 0.12,
+  "target_miss_distance_km": 2.0,
+  "allowed_directions": [
+    "prograde",
+    "retrograde",
+    "radial_out",
+    "radial_in",
+    "normal",
+    "anti_normal"
+  ],
+  "delta_v_options_m_s": [0.1, 0.2, 0.3, 0.4, 0.5],
+  "max_delta_v_m_s": 0.5
+}

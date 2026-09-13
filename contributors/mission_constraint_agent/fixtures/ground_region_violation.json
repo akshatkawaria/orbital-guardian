@@ -1,0 +1,36 @@
+{
+  "_notes": "Isolated fixture for check_ground_region only: a single along_track candidate large enough (5 m/s) that its 24h projected ground-track drift (~5 km/day) exceeds the 10km tolerance. No other constraint should fire — altitude band is left wide, fuel budget generous, no other satellites listed — so this fixture pins down the ground-region check in isolation per the testing-strategy 'one fixture per violation code' principle.",
+
+  "primary_state": {
+    "object_id": "SAT-042",
+    "r_km": [6928.137, 0.0, 0.0],
+    "v_kms": [0.0, 7.585088535158763, 0.0],
+    "mean_motion_rad_s": 0.001094823692885802
+  },
+  "request": {
+    "primary_id": "SAT-042",
+    "candidates": [
+      {
+        "maneuver_id": "M-DRIFT",
+        "burn_time_utc": "2026-09-12T13:46:00Z",
+        "direction": "along_track",
+        "dv_ms": 50.0,
+        "predicted_miss_km": 30.0,
+        "predicted_pc": 1.0e-8,
+        "fuel_cost_pct": 0.2
+      }
+    ],
+    "constraints": {
+      "altitude_band_km": [400, 900],
+      "protected_ground_regions": ["India"],
+      "max_fuel_budget_pct_remaining": 5.0,
+      "other_active_satellites_km": []
+    }
+  },
+  "expected_response": {
+    "primary_id": "SAT-042",
+    "evaluated": [
+      { "maneuver_id": "M-DRIFT", "approved": false, "fuel_cost_pct": 0.2, "violations": ["protected_region_coverage_risk:India"] }
+    ]
+  }
+}

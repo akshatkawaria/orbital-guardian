@@ -1,0 +1,9 @@
+{
+  "primary_id": "SAT-042",
+  "secondary_id": "DEB-556",
+  "risk_tier": "YELLOW",
+  "pc": 3.2e-6,
+  "time_to_tca_minutes": 240,
+  "pc_threshold_target": 1e-6,
+  "evaluated_candidates": []
+}

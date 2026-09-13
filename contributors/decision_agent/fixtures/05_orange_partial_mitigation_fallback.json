@@ -1,0 +1,28 @@
+{
+  "primary_id": "SAT-107",
+  "secondary_id": "DEB-204",
+  "risk_tier": "ORANGE",
+  "pc": 6.5e-5,
+  "time_to_tca_minutes": 180,
+  "pc_threshold_target": 1e-6,
+  "evaluated_candidates": [
+    {
+      "maneuver_id": "M1",
+      "approved": true,
+      "dv_ms": 0.50,
+      "predicted_pc": 5.0e-5,
+      "predicted_miss_km": 6.0,
+      "fuel_cost_pct": 0.2,
+      "violations": []
+    },
+    {
+      "maneuver_id": "M2",
+      "approved": true,
+      "dv_ms": 0.95,
+      "predicted_pc": 8.0e-5,
+      "predicted_miss_km": 4.5,
+      "fuel_cost_pct": 0.5,
+      "violations": []
+    }
+  ]
+}

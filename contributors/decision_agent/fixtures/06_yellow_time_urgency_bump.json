@@ -1,0 +1,19 @@
+{
+  "primary_id": "SAT-042",
+  "secondary_id": "DEB-777",
+  "risk_tier": "YELLOW",
+  "pc": 4.8e-6,
+  "time_to_tca_minutes": 12,
+  "pc_threshold_target": 1e-6,
+  "evaluated_candidates": [
+    {
+      "maneuver_id": "M1",
+      "approved": true,
+      "dv_ms": 0.55,
+      "predicted_pc": 3.0e-7,
+      "predicted_miss_km": 12.0,
+      "fuel_cost_pct": 0.2,
+      "violations": []
+    }
+  ]
+}

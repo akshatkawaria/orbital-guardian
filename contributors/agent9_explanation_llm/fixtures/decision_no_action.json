@@ -1,0 +1,11 @@
+{
+  "decision": {
+    "primary_id": "SAT-107",
+    "decision": "NO_ACTION",
+    "selected_maneuver": null,
+    "confidence_pct": 99
+  },
+  "context": {
+    "risk_tier": "GREEN"
+  }
+}

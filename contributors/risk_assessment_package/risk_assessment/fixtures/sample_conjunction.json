@@ -1,0 +1,10 @@
+{
+  "primary_id": "SAT-042",
+  "secondary_id": "DEB-891",
+  "tca_utc": "2026-09-12T14:32:00Z",
+  "relative_position_km": [1.1, -0.9, 0.6],
+  "relative_velocity_vec_kms": [7.9, -1.8, 1.2],
+  "combined_hard_body_radius_m": 15,
+  "position_covariance_primary_km2": [[0.01, 0, 0], [0, 0.03, 0], [0, 0, 0.01]],
+  "position_covariance_secondary_km2": [[0.02, 0, 0], [0, 0.05, 0], [0, 0, 0.02]]
+}

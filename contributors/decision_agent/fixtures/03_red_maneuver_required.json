@@ -1,0 +1,43 @@
+{
+  "primary_id": "SAT-042",
+  "secondary_id": "DEB-891",
+  "risk_tier": "RED",
+  "pc": 3.4e-3,
+  "time_to_tca_minutes": 46,
+  "pc_threshold_target": 1e-6,
+  "evaluated_candidates": [
+    {
+      "maneuver_id": "M1",
+      "approved": true,
+      "dv_ms": 0.72,
+      "predicted_pc": 4.1e-7,
+      "predicted_miss_km": 16.8,
+      "fuel_cost_pct": 0.3,
+      "burn_time_utc": "2026-09-12T13:46:00Z",
+      "direction": "along_track",
+      "violations": []
+    },
+    {
+      "maneuver_id": "M2",
+      "approved": false,
+      "dv_ms": 0.91,
+      "predicted_pc": 1.2e-7,
+      "predicted_miss_km": 23.2,
+      "fuel_cost_pct": 0.4,
+      "burn_time_utc": "2026-09-12T13:46:00Z",
+      "direction": "along_track",
+      "violations": ["altitude_band_exceeded"]
+    },
+    {
+      "maneuver_id": "M3",
+      "approved": false,
+      "dv_ms": 1.20,
+      "predicted_pc": 5.0e-8,
+      "predicted_miss_km": 41.7,
+      "fuel_cost_pct": 0.6,
+      "burn_time_utc": "2026-09-12T13:46:00Z",
+      "direction": "radial",
+      "violations": ["fuel_budget_exceeded", "creates_secondary_conjunction:SAT-107"]
+    }
+  ]
+}

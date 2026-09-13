@@ -1,0 +1,25 @@
+[
+  {
+    "text": "Avoid this collision while minimizing fuel consumption and don't reduce the satellite's communication coverage over India.",
+    "expected": {
+      "protected_ground_regions": ["India"],
+      "optimize_for": "min_fuel"
+    }
+  },
+  {
+    "text": "Just get us the biggest possible miss distance, fuel isn't a concern this time.",
+    "expected": {
+      "protected_ground_regions": [],
+      "optimize_for": "min_miss_distance"
+    }
+  },
+  {
+    "text": "Keep the satellite between 540 and 560 km and don't use more than 2% of remaining fuel.",
+    "expected": {
+      "protected_ground_regions": [],
+      "optimize_for": "none",
+      "max_fuel_budget_pct_remaining": 2.0,
+      "altitude_band_km": [540, 560]
+    }
+  }
+]

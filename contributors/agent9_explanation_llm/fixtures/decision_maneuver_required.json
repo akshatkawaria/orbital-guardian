@@ -1,0 +1,22 @@
+{
+  "decision": {
+    "primary_id": "SAT-042",
+    "decision": "MANEUVER_REQUIRED",
+    "selected_maneuver": {
+      "maneuver_id": "M1",
+      "burn_time_utc": "2026-09-12T13:46:00Z",
+      "direction": "along_track",
+      "dv_ms": 0.72,
+      "predicted_miss_km": 16.8,
+      "predicted_pc": 4.1e-7,
+      "fuel_cost_pct": 0.3
+    },
+    "confidence_pct": 94
+  },
+  "context": {
+    "secondary_id": "DEB-891",
+    "risk_tier": "RED",
+    "time_to_tca_minutes": 46,
+    "miss_distance_km": 1.8
+  }
+}
